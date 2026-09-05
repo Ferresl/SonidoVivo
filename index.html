@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SonidoVivo | Tienda de Música</title>
+  <link rel="stylesheet" href="stylesinicio.css">
+</head>
+<body>
+
+  <!-- ===============================
+       1. ENCABEZADO Y NAVEGACIÓN
+  ================================ -->
+  <header class="header">
+    <div class="navbar-container">
+      <!-- Logo -->
+      <a href="#" class="logo">
+        Sonido<span>Vivo</span>
+      </a>
+
+      <!-- Barra de búsqueda -->
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar guitarras, micrófonos, pedales...">
+        <button type="button" aria-label="Buscar">🔍</button>
+      </div>
+
+      <!-- Menú de navegación -->
+      <nav class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#" class="active">Inicio</a></li>
+          <li><a href="#instrumentos">Instrumentos</a></li>
+          <li><a href="#estudio">Audio & Estudio</a></li>
+          <li><a href="#ofertas">Ofertas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botones de usuario -->
+      <div class="nav-actions">
+        <a href="#cuenta" class="action-btn" title="Mi Cuenta">
+          <span class="icon">👤</span>
+        </a>
+        <a href="#carrito" class="action-btn cart-btn" title="Carrito">
+          <span class="icon">🛒</span>
+          <span class="badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===============================
+       2. CARRUSEL DE IMÁGENES
+  ================================ -->
+  <section class="carousel-section">
+    <div class="carousel-container">
+      
+      <div class="carousel-slide fade">
+        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80" alt="Guitarras Eléctricas">
+        <div class="carousel-caption">Explora nuestra colección premium de Guitarras Eléctricas</div>
+      </div>
+
+      <div class="carousel-slide fade">
+        <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=1200&q=80" alt="Baterías Acústicas">
+        <div class="carousel-caption">Baterías Acústicas para todos los niveles</div>
+      </div>
+
+      <div class="carousel-slide fade">
+        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1200&q=80" alt="Micrófonos de Estudio">
+        <div class="carousel-caption">Audio Profesional: Micrófonos de Estudio y En Vivo</div>
+      </div>
+
+      <div class="carousel-slide fade">
+        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80" alt="Sintetizadores y Teclados">
+        <div class="carousel-caption">Crea nuevos mundos sonoros con nuestros Teclados</div>
+      </div>
+
+      <div class="carousel-slide fade">
+        <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=1200&q=80" alt="Ofertas Imperdibles">
+        <div class="carousel-caption">¡Aprovecha nuestras Ofertas Imperdibles de la semana!</div>
+      </div>
+
+      <!-- Botones de navegación -->
+      <a class="carousel-prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="carousel-next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- Indicadores (Puntos) -->
+    <div class="carousel-dots">
+      <span class="carousel-dot" onclick="currentSlide(1)"></span> 
+      <span class="carousel-dot" onclick="currentSlide(2)"></span> 
+      <span class="carousel-dot" onclick="currentSlide(3)"></span> 
+      <span class="carousel-dot" onclick="currentSlide(4)"></span> 
+      <span class="carousel-dot" onclick="currentSlide(5)"></span> 
+    </div>
+  </section>
+
+  <!-- ===============================
+       3. HERO SECTION
+  ================================ -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Siente el poder de la música</h1>
+      <p>Guitarras, percusión, audio profesional y accesorios con despacho directo.</p>
+      <a href="#catalogo" class="btn-primary">Ver Catálogo</a>
+    </div>
+  </section>
+
+  <!-- ===============================
+       4. CATEGORÍAS
+  ================================ -->
+  <section class="section categories" id="catalogo">
+    <h2>Explora por Categoría</h2>
+    <div class="grid-categories">
+      <div class="card-cat"><h3>Cuerdas</h3></div>
+      <div class="card-cat"><h3>Percusión</h3></div>
+      <div class="card-cat"><h3>Audio & Estudio</h3></div>
+      <div class="card-cat"><h3>Teclados</h3></div>
+    </div>
+  </section>
+
+  <!-- ===============================
+       5. BENEFICIOS
+  ================================ -->
+  <section class="features">
+    <div class="feature-item">🚚 Envíos a todo el país</div>
+    <div class="feature-item">🛡️ Garantía oficial</div>
+    <div class="feature-item">💳 Pagos en cuotas</div>
+  </section>
+
+  <!-- ===============================
+       6. JAVASCRIPT DEL CARRUSEL
+  ================================ -->
+  <script>
+    let slideIndex = 1;
+    let slideTimer;
+
+    showSlides(slideIndex);
+    startAutoSlide();
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+      resetAutoSlide();
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+      resetAutoSlide();
+    }
+
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("carousel-slide");
+      let dots = document.getElementsByClassName("carousel-dot");
+      
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      if (dots.length > 0) {
+        dots[slideIndex - 1].className += " active";
+      }
+    }
+
+    function startAutoSlide() {
+      slideTimer = setInterval(() => {
+        plusSlides(1);
+      }, 5000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(slideTimer);
+      startAutoSlide();
+    }
+  </script>
+
+<!-- Justo antes de cerrar body -->
+  <script src="javascrpit.js"></script>
+</body>
+</body>
+
+</html>
