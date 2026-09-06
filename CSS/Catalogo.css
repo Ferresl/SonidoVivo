@@ -1,8 +1,74 @@
-.catalogoOrden{
-
+.catalogoOrden {
     display: flex;
-    gap: 30px;
     flex-wrap: wrap;
-    margin-top: 70px;
-
+    gap: 5px;
+    background-color: rgb(228, 228, 228);
+    margin-left: 800px;
+    margin-top: 100px;
+    margin-right: 200px;
 }
+.card-catalogo {
+    
+    margin-left: 40px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+   
+}
+
+
+.banner{
+    background-color: rgb(9, 97, 212);
+    color: aliceblue;
+    font-size: 90px;
+}
+
+.manito{
+    cursor: pointer;
+}
+
+.precio{
+    color: rgb(38, 38, 192);
+    font-size: 20px;
+}
+
+
+.size-imagen{
+    width: 200px;
+    height:200px ;
+    margin: 20px 20px;
+}
+
+.section-gris {
+    background-color: rgb(235, 235, 235);
+    padding: 40px 0;
+}
+.section-blanco {
+    background-color: white;
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.detalle-contenido {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.detalle-imagen {
+    width: 60%;
+}
+
+.detalle-info {
+    width: 40%;
+}
+
+.imagen-producto {
+    width: 100%;
+    height: 450px;
+    object-fit: contain;
+}
+
+
+
