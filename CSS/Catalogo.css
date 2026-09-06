@@ -1,59 +1,33 @@
 .catalogoOrden {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 1px;
     background-color: rgb(228, 228, 228);
-    margin-left: 800px;
+    margin-left: 470px;
     margin-top: 100px;
-    margin-right: 200px;
+    margin-right: 50px;
 }
 .card-catalogo {
     
-    margin-left: 40px;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    width: 100% ;
+    max-width: 280px;
    
 }
 
 
-.banner{
-    background-color: rgb(9, 97, 212);
-    color: aliceblue;
-    font-size: 90px;
-}
-
-.manito{
-    cursor: pointer;
-}
-
-.precio{
-    color: rgb(38, 38, 192);
-    font-size: 20px;
-}
-
-
-.size-imagen{
-    width: 200px;
-    height:200px ;
-    margin: 20px 20px;
-}
-
-.section-gris {
-    background-color: rgb(235, 235, 235);
-    padding: 40px 0;
-}
 .section-blanco {
     background-color: white;
     width: 90%;
-    max-width: 1300px;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 60px;
 }
 
 .detalle-contenido {
     display: flex;
     gap: 50px;
     align-items: flex-start;
+    margin-top: 70px;
 }
 
 .detalle-imagen {
@@ -71,4 +45,45 @@
 }
 
 
+
+.zona-catalogo {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 30px;
+
+    width: 96%;
+    margin: 30px auto;
+}
+
+.filtros {
+   width: 220px;
+    flex-shrink: 0;
+
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: sticky;
+    top: 20px;
+    margin-top: 20px;
+}
+
+.filtros label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.catalogoOrden {
+    display: grid;
+    grid-template-columns: repeat(5, 280px);
+    gap: 20px;
+
+    width: fit-content;
+    flex: 0 0 auto;
+
+    margin: 0;
+    padding: 10px;
+  
+    
+}
 
