@@ -1,0 +1,10 @@
+.size-imagen{
+    width: 200px;
+    height:200px ;
+    margin: 20px 20px;
+}
+.banner{
+    background-color: rgb(9, 97, 212);
+    color: aliceblue;
+    font-size: 90px;
+}
