@@ -1,0 +1,895 @@
+let productos = [
+
+    {
+        id: 1,
+        codigo: "GA001",
+        categoria: "Guitarras Acústicas",
+        nombre: "Guitarra Acústica Folk",
+        marca: "Yamaha",
+        modelo: "F310",
+        stock: 8,
+        precio: 129990,
+        descripcion: "Guitarra acústica folk con tapa de abeto y cuerpo de meranti, diseñada para ofrecer una respuesta equilibrada y una buena proyección acústica.",
+        imagen: "Images/CatalogoImages/GA001-front.png",
+        imagenS: "Images/CatalogoImages/GA001-side.png",
+        imagenB: "Images/CatalogoImages/GA001-back.png",
+        imagenD: "Images/CatalogoImages/GA001-detail.png"
+    },
+
+    {
+        id: 2,
+        codigo: "GA002",
+        categoria: "Guitarras Acústicas",
+        nombre: "Guitarra Acústica Dreadnought",
+        marca: "Fender",
+        modelo: "CD-60S",
+        stock: 5,
+        precio: 189990,
+        descripcion: "Guitarra acústica dreadnought con tapa de abeto macizo y brazo de caoba, caracterizada por su buena proyección, dinámica y sonido cálido.",
+        imagen: "Images/CatalogoImages/GA002-front.png",
+        imagenS: "Images/CatalogoImages/GA002-side.png",
+        imagenB: "Images/CatalogoImages/GA002-back.png",
+        imagenD: "Images/CatalogoImages/GA002-detail.png"
+    },
+
+    {
+        id: 3,
+        codigo: "GA003",
+        categoria: "Guitarras Acústicas",
+        nombre: "Guitarra Acústica Clásica 4/4",
+        marca: "Yamaha",
+        modelo: "C40",
+        stock: 10,
+        precio: 89990,
+        descripcion: "Guitarra clásica de tamaño completo con cuerdas de nailon y tapa de abeto, ideal para estudio, técnica clásica y ejecución de repertorio acústico.",
+        imagen: "Images/CatalogoImages/GA003-front.png",
+        imagenS: "Images/CatalogoImages/GA003-side.png",
+        imagenB: "Images/CatalogoImages/GA003-back.png",
+        imagenD: "Images/CatalogoImages/GA003-detail.png"
+    },
+
+    {
+        id: 4,
+        codigo: "GA004",
+        categoria: "Guitarras Acústicas",
+        nombre: "Guitarra Electroacústica",
+        marca: "Takamine",
+        modelo: "GN20CE",
+        stock: 3,
+        precio: 349990,
+        descripcion: "Guitarra electroacústica equipada con sistema de captación y afinador integrado, preparada para interpretación acústica y amplificación en vivo.",
+        imagen: "Images/CatalogoImages/GA004-front.png",
+        imagenS: "Images/CatalogoImages/GA004-side.png",
+        imagenB: "Images/CatalogoImages/GA004-back.png",
+        imagenD: "Images/CatalogoImages/GA004-detail.png"
+    },
+
+    {
+        id: 5,
+        codigo: "GA005",
+        categoria: "Guitarras Acústicas",
+        nombre: "Guitarra 3/4",
+        marca: "Yamaha",
+        modelo: "JR1",
+        stock: 6,
+        precio: 79990,
+        descripcion: "Guitarra acústica compacta de tamaño 3/4, especialmente cómoda para niños, estudiantes jóvenes y músicos que buscan mayor portabilidad.",
+        imagen: "Images/CatalogoImages/GA005-front.png",
+        imagenS: "Images/CatalogoImages/GA005-side.png",
+        imagenB: "Images/CatalogoImages/GA005-back.png",
+        imagenD: "Images/CatalogoImages/GA005-detail.png"
+    },
+
+    {
+        id: 6,
+        codigo: "GE001",
+        categoria: "Guitarras Eléctricas",
+        nombre: "Guitarra Eléctrica Stratocaster",
+        marca: "Squier",
+        modelo: "Affinity Strat",
+        stock: 5,
+        precio: 249990,
+        descripcion: "Guitarra eléctrica tipo Stratocaster con cuerpo de álamo, mástil de arce y configuración de tres pastillas single-coil.",
+        imagen: "Images/CatalogoImages/GE001-front.png",
+        imagenS: "Images/CatalogoImages/GE001-side.png",
+        imagenB: "Images/CatalogoImages/GE001-back.png",
+        imagenD: "Images/CatalogoImages/GE001-detail.png"
+    },
+
+    {
+        id: 7,
+        codigo: "GE002",
+        categoria: "Guitarras Eléctricas",
+        nombre: "Guitarra Eléctrica Les Paul",
+        marca: "Epiphone",
+        modelo: "Les Paul Std",
+        stock: 4,
+        precio: 329990,
+        descripcion: "Guitarra eléctrica con cuerpo de caoba, tapa de arce y pastillas humbucker, orientada a un sonido potente, cálido y con gran sustain.",
+        imagen: "Images/CatalogoImages/GE002-front.png",
+        imagenS: "Images/CatalogoImages/GE002-side.png",
+        imagenB: "Images/CatalogoImages/GE002-back.png",
+        imagenD: "Images/CatalogoImages/GE002-detail.png"
+    },
+
+    {
+        id: 8,
+        codigo: "GE003",
+        categoria: "Guitarras Eléctricas",
+        nombre: "Guitarra Eléctrica SG",
+        marca: "Epiphone",
+        modelo: "SG Standard",
+        stock: 3,
+        precio: 319990,
+        descripcion: "Guitarra eléctrica de cuerpo de caoba equipada con dos pastillas humbucker, diseñada para entregar un tono potente y definido.",
+        imagen: "Images/CatalogoImages/GE003-front.png",
+        imagenS: "Images/CatalogoImages/GE003-side.png",
+        imagenB: "Images/CatalogoImages/GE003-back.png",
+        imagenD: "Images/CatalogoImages/GE003-detail.png"
+    },
+
+    {
+        id: 9,
+        codigo: "GE004",
+        categoria: "Guitarras Eléctricas",
+        nombre: "Guitarra Eléctrica Telecaster",
+        marca: "Squier",
+        modelo: "Affinity Tele",
+        stock: 4,
+        precio: 239990,
+        descripcion: "Guitarra eléctrica estilo Telecaster con cuerpo de álamo y dos pastillas single-coil, destacada por su ataque definido y claridad tonal.",
+        imagen: "Images/CatalogoImages/GE004-front.png",
+        imagenS: "Images/CatalogoImages/GE004-side.png",
+        imagenB: "Images/CatalogoImages/GE004-back.png",
+        imagenD: "Images/CatalogoImages/GE004-detail.png"
+    },
+
+    {
+        id: 10,
+        codigo: "GE005",
+        categoria: "Guitarras Eléctricas",
+        nombre: "Guitarra Eléctrica Semi-Hollow",
+        marca: "Epiphone",
+        modelo: "ES-335",
+        stock: 2,
+        precio: 549990,
+        descripcion: "Guitarra eléctrica semi-hueca con dos humbuckers, caracterizada por un tono cálido, resonante y con gran riqueza armónica.",
+        imagen: "Images/CatalogoImages/GE005-front.png",
+        imagenS: "Images/CatalogoImages/GE005-side.png",
+        imagenB: "Images/CatalogoImages/GE005-back.png",
+        imagenD: "Images/CatalogoImages/GE005-detail.png"
+    },
+
+    {
+        id: 11,
+        codigo: "BA001",
+        categoria: "Bajos Eléctricos",
+        nombre: "Bajo Eléctrico 4 Cuerdas",
+        marca: "Squier",
+        modelo: "Affinity PJ",
+        stock: 5,
+        precio: 299990,
+        descripcion: "Bajo eléctrico de cuatro cuerdas con configuración de pastillas PJ, cuerpo de álamo y mástil de arce para una respuesta tonal versátil.",
+        imagen: "Images/CatalogoImages/BA001-front.png",
+        imagenS: "Images/CatalogoImages/BA001-side.png",
+        imagenB: "Images/CatalogoImages/BA001-back.png",
+        imagenD: "Images/CatalogoImages/BA001-detail.png"
+    },
+
+    {
+        id: 12,
+        codigo: "BA002",
+        categoria: "Bajos Eléctricos",
+        nombre: "Bajo Eléctrico Jazz Bass",
+        marca: "Fender",
+        modelo: "Player Jazz",
+        stock: 2,
+        precio: 699990,
+        descripcion: "Bajo eléctrico Jazz Bass con cuerpo de aliso y dos pastillas Alnico V single-coil, ofreciendo una respuesta definida y articulada.",
+        imagen: "Images/CatalogoImages/BA002-front.png",
+        imagenS: "Images/CatalogoImages/BA002-side.png",
+        imagenB: "Images/CatalogoImages/BA002-back.png",
+        imagenD: "Images/CatalogoImages/BA002-detail.png"
+    },
+
+    {
+        id: 13,
+        codigo: "BA003",
+        categoria: "Bajos Eléctricos",
+        nombre: "Bajo Acústico 4 Cuerdas",
+        marca: "Yamaha",
+        modelo: "APX700II",
+        stock: 2,
+        precio: 429990,
+        descripcion: "Bajo electroacústico de cuatro cuerdas con sistema electrónico y afinador integrado, preparado para interpretación acústica y amplificada.",
+        imagen: "Images/CatalogoImages/BA003-front-1254x1254.png",
+        imagenS: "Images/CatalogoImages/BA003-side.png",
+        imagenB: "Images/CatalogoImages/BA003-back.png",
+        imagenD: "Images/CatalogoImages/BA003-detail.png"
+    },
+
+    {
+        id: 14,
+        codigo: "BT001",
+        categoria: "Baterías",
+        nombre: "Batería Acústica 5 Piezas",
+        marca: "Pearl",
+        modelo: "Roadshow",
+        stock: 2,
+        precio: 599990,
+        descripcion: "Set de batería acústica de cinco piezas que incluye hardware, platillos y pedal de bombo para una configuración completa.",
+        imagen: "Images/CatalogoImages/BT001-front.png",
+        imagenS: "Images/CatalogoImages/BT001-side.png",
+        imagenB: "Images/CatalogoImages/BT001-back.png",
+        imagenD: "Images/CatalogoImages/BT001-detail.png"
+    },
+
+    {
+        id: 15,
+        codigo: "BT002",
+        categoria: "Baterías",
+        nombre: "Batería Electrónica 8 Pads",
+        marca: "Roland",
+        modelo: "TD-02KV",
+        stock: 2,
+        precio: 799990,
+        descripcion: "Batería electrónica equipada con módulo TD-02 y ocho pads, ideal para práctica, aprendizaje y ejecución con sonidos digitales.",
+        imagen: "Images/CatalogoImages/BT002-front.png",
+        imagenS: "Images/CatalogoImages/BT002-side.png",
+        imagenB: "Images/CatalogoImages/BT002-back.png",
+        imagenD: "Images/CatalogoImages/BT002-detail.png"
+    },
+
+    {
+        id: 16,
+        codigo: "BT003",
+        categoria: "Baterías",
+        nombre: "Caja Snare 14\"",
+        marca: "Pearl",
+        modelo: "STE1450",
+        stock: 4,
+        precio: 89990,
+        descripcion: "Caja de acero de 14 x 5 pulgadas equipada con diez tensores para obtener una afinación precisa y un ataque definido.",
+        imagen: "Images/CatalogoImages/BT003-front.png",
+        imagenS: "Images/CatalogoImages/BT003-side.png",
+        imagenB: "Images/CatalogoImages/BT003-back.png",
+        imagenD: "Images/CatalogoImages/BT003-detail.png"
+    },
+
+    {
+        id: 17,
+        codigo: "BT004",
+        categoria: "Baterías",
+        nombre: "Hi-Hat 14\"",
+        marca: "Zildjian",
+        modelo: "A Series",
+        stock: 3,
+        precio: 149990,
+        descripcion: "Hi-hat de 14 pulgadas fabricado en aleación B20, con respuesta brillante, clara y definida para mantener el pulso rítmico.",
+        imagen: "Images/CatalogoImages/BT004-front.png",
+        imagenS: "Images/CatalogoImages/BT004-side.png",
+        imagenB: "Images/CatalogoImages/BT004-back.png",
+        imagenD: "Images/CatalogoImages/BT004-detail.png"
+    },
+
+    {
+        id: 18,
+        codigo: "BT005",
+        categoria: "Baterías",
+        nombre: "Crash 16\"",
+        marca: "Zildjian",
+        modelo: "A Series",
+        stock: 3,
+        precio: 129990,
+        descripcion: "Platillo crash de 16 pulgadas fabricado en aleación B20, caracterizado por un ataque rápido y gran riqueza armónica.",
+        imagen: "Images/CatalogoImages/BT005-front.png",
+        imagenS: "Images/CatalogoImages/BT005-side.png",
+        imagenB: "Images/CatalogoImages/BT005-back.png",
+        imagenD: "Images/CatalogoImages/BT005-detail.png"
+    },
+
+    {
+        id: 19,
+        codigo: "TC001",
+        categoria: "Teclados y Pianos",
+        nombre: "Teclado Digital 61 Teclas",
+        marca: "Yamaha",
+        modelo: "PSR-E373",
+        stock: 4,
+        precio: 249990,
+        descripcion: "Teclado digital de 61 teclas sensibles al tacto con 622 voces, pensado para interpretación, práctica y aprendizaje musical.",
+        imagen: "Images/CatalogoImages/TC001-front.png",
+        imagenS: "Images/CatalogoImages/TC001-side.png",
+        imagenB: "Images/CatalogoImages/TC001-back.png",
+        imagenD: "Images/CatalogoImages/TC001-detail.png"
+    },
+
+    {
+        id: 20,
+        codigo: "TC002",
+        categoria: "Teclados y Pianos",
+        nombre: "Piano Digital 88 Teclas",
+        marca: "Yamaha",
+        modelo: "P-45",
+        stock: 2,
+        precio: 499990,
+        descripcion: "Piano digital de 88 teclas pesadas con diez voces y pedal sustain, diseñado para una ejecución de carácter pianístico.",
+        imagen: "Images/CatalogoImages/TC002-front.png",
+        imagenS: "Images/CatalogoImages/TC002-side.png",
+        imagenB: "Images/CatalogoImages/TC002-back.png",
+        imagenD: "Images/CatalogoImages/TC002-detail.png"
+    },
+
+    {
+        id: 21,
+        codigo: "TC003",
+        categoria: "Teclados y Pianos",
+        nombre: "Sintetizador 49 Teclas",
+        marca: "Arturia",
+        modelo: "MiniLab MKII",
+        stock: 5,
+        precio: 129990,
+        descripcion: "Controlador MIDI con 49 mini teclas diseñado para controlar instrumentos virtuales, sintetizadores y software de producción musical.",
+        imagen: "Images/CatalogoImages/TC003-front.png",
+        imagenS: "Images/CatalogoImages/TC003-side.png",
+        imagenB: "Images/CatalogoImages/TC003-back.png",
+        imagenD: "Images/CatalogoImages/TC003-detail.png"
+    },
+
+    {
+        id: 22,
+        codigo: "TC004",
+        categoria: "Teclados y Pianos",
+        nombre: "Teclado MIDI 88 Teclas",
+        marca: "M-Audio",
+        modelo: "Hammer 88",
+        stock: 2,
+        precio: 399990,
+        descripcion: "Controlador MIDI de 88 teclas con acción de martillo, orientado al control expresivo de instrumentos virtuales y software musical.",
+        imagen: "Images/CatalogoImages/TC004-front.png",
+        imagenS: "Images/CatalogoImages/TC004-side.png",
+        imagenB: "Images/CatalogoImages/TC004-back.png",
+        imagenD: "Images/CatalogoImages/TC004-detail.png"
+    },
+
+    {
+        id: 23,
+        codigo: "AM001",
+        categoria: "Amplificadores",
+        nombre: "Amplificador Guitarra 15W",
+        marca: "Fender",
+        modelo: "Frontman 15G",
+        stock: 5,
+        precio: 99990,
+        descripcion: "Amplificador combo para guitarra de 15 watts con distorsión integrada y entrada auxiliar, ideal para práctica y estudio.",
+        imagen: "Images/CatalogoImages/AM001-front.png",
+        imagenS: "Images/CatalogoImages/AM001-side.png",
+        imagenB: "Images/CatalogoImages/AM001-back.png",
+        imagenD: "Images/CatalogoImages/AM001-detail.png"
+    },
+
+    {
+        id: 24,
+        codigo: "AM002",
+        categoria: "Amplificadores",
+        nombre: "Amplificador Guitarra 40W",
+        marca: "Marshall",
+        modelo: "MG40GFX",
+        stock: 3,
+        precio: 299990,
+        descripcion: "Amplificador de guitarra de 40 watts con cuatro canales y efectos digitales integrados para una amplia variedad de sonidos.",
+        imagen: "Images/CatalogoImages/AM002-front.png",
+        imagenS: "Images/CatalogoImages/AM002-side.png",
+        imagenB: "Images/CatalogoImages/AM002-back.png",
+        imagenD: "Images/CatalogoImages/AM002-detail.png"
+    },
+
+    {
+        id: 25,
+        codigo: "AM003",
+        categoria: "Amplificadores",
+        nombre: "Amplificador Bajo 100W",
+        marca: "Hartke",
+        modelo: "HD100",
+        stock: 2,
+        precio: 449990,
+        descripcion: "Amplificador para bajo eléctrico de 100 watts con tweeter y ecualizador de cuatro bandas para controlar el espectro tonal.",
+        imagen: "Images/CatalogoImages/AM003-front.png",
+        imagenS: "Images/CatalogoImages/AM003-side.png",
+        imagenB: "Images/CatalogoImages/AM003-back.png",
+        imagenD: "Images/CatalogoImages/AM003-detail.png"
+    },
+
+    {
+        id: 26,
+        codigo: "AM004",
+        categoria: "Amplificadores",
+        nombre: "Amplificador Acústico 60W",
+        marca: "Fishman",
+        modelo: "Loudbox Mini",
+        stock: 2,
+        precio: 499990,
+        descripcion: "Amplificador acústico de 60 watts y dos canales con efectos de reverb y chorus para instrumentos electroacústicos.",
+        imagen: "Images/CatalogoImages/AM004-front.png",
+        imagenS: "Images/CatalogoImages/AM004-side.png",
+        imagenB: "Images/CatalogoImages/AM004-back.png",
+        imagenD: "Images/CatalogoImages/AM004-detail.png"
+    },
+
+    {
+        id: 27,
+        codigo: "MI001",
+        categoria: "Micrófonos",
+        nombre: "Micrófono Dinámico Cardioide",
+        marca: "Shure",
+        modelo: "SM58",
+        stock: 8,
+        precio: 149990,
+        descripcion: "Micrófono dinámico cardioide diseñado para captación vocal, reconocido por su claridad y rendimiento en presentaciones en vivo.",
+        imagen: "Images/CatalogoImages/MI001-front.png",
+        imagenS: "Images/CatalogoImages/MI001-side.png",
+        imagenB: "Images/CatalogoImages/MI001-back.png",
+        imagenD: "Images/CatalogoImages/MI001-detail.png"
+    },
+
+    {
+        id: 28,
+        codigo: "MI002",
+        categoria: "Micrófonos",
+        nombre: "Micrófono Dinámico de Instrumento",
+        marca: "Shure",
+        modelo: "SM57",
+        stock: 6,
+        precio: 139990,
+        descripcion: "Micrófono dinámico diseñado para captar instrumentos y amplificadores con gran definición de ataque y resistencia a altos niveles sonoros.",
+        imagen: "Images/CatalogoImages/MI002-front.png",
+        imagenS: "Images/CatalogoImages/MI002-side.png",
+        imagenB: "Images/CatalogoImages/MI002-back.png",
+        imagenD: "Images/CatalogoImages/MI002-detail.png"
+    },
+
+    {
+        id: 29,
+        codigo: "MI003",
+        categoria: "Micrófonos",
+        nombre: "Micrófono Condensador",
+        marca: "Audio-Technica",
+        modelo: "AT2020",
+        stock: 4,
+        precio: 199990,
+        descripcion: "Micrófono de condensador cardioide con conexión XLR, diseñado para capturar voces e instrumentos con alto nivel de detalle.",
+        imagen: "Images/CatalogoImages/MI003-front.png",
+        imagenS: "Images/CatalogoImages/MI003-side.png",
+        imagenB: "Images/CatalogoImages/MI003-back.png",
+        imagenD: "Images/CatalogoImages/MI003-detail.png"
+    },
+
+    {
+        id: 30,
+        codigo: "MI004",
+        categoria: "Micrófonos",
+        nombre: "Micrófono USB de Condensador",
+        marca: "Blue",
+        modelo: "Yeti",
+        stock: 5,
+        precio: 299990,
+        descripcion: "Micrófono USB de condensador con cuatro patrones polares, versátil para streaming, podcast, locución y creación de contenido.",
+        imagen: "Images/CatalogoImages/MI004-front.png",
+        imagenS: "Images/CatalogoImages/MI004-side.png",
+        imagenB: "Images/CatalogoImages/MI004-back.png",
+        imagenD: "Images/CatalogoImages/MI004-detail.png"
+    },
+
+    {
+        id: 31,
+        codigo: "PE001",
+        categoria: "Pedales de Efectos",
+        nombre: "Pedal de Distorsión",
+        marca: "Boss",
+        modelo: "DS-1",
+        stock: 7,
+        precio: 79990,
+        descripcion: "Pedal de distorsión clásico con controles de nivel, tono y distorsión para obtener sonidos saturados y definidos.",
+        imagen: "Images/CatalogoImages/PE001-front.png",
+        imagenS: "Images/CatalogoImages/PE001-side.png",
+        imagenB: "Images/CatalogoImages/PE001-back.png",
+        imagenD: "Images/CatalogoImages/PE001-detail.png"
+    },
+
+    {
+        id: 32,
+        codigo: "PE002",
+        categoria: "Pedales de Efectos",
+        nombre: "Pedal Reverb",
+        marca: "Boss",
+        modelo: "RV-6",
+        stock: 4,
+        precio: 179990,
+        descripcion: "Pedal digital de reverberación con ocho modos y función shimmer para crear espacios, profundidad y ambientes sonoros.",
+        imagen: "Images/CatalogoImages/PE002-front.png",
+        imagenS: "Images/CatalogoImages/PE002-side.png",
+        imagenB: "Images/CatalogoImages/PE002-back.png",
+        imagenD: "Images/CatalogoImages/PE002-detail.png"
+    },
+
+    {
+        id: 33,
+        codigo: "PE003",
+        categoria: "Pedales de Efectos",
+        nombre: "Pedal Multi-Efectos",
+        marca: "Boss",
+        modelo: "ME-80",
+        stock: 2,
+        precio: 349990,
+        descripcion: "Procesador multi-efectos en formato pedalboard capaz de combinar hasta ocho efectos simultáneamente para guitarra eléctrica.",
+        imagen: "Images/CatalogoImages/PE003-front.png",
+        imagenS: "Images/CatalogoImages/PE003-side.png",
+        imagenB: "Images/CatalogoImages/PE003-back.png",
+        imagenD: "Images/CatalogoImages/PE003-detail.png"
+    },
+
+    {
+        id: 34,
+        codigo: "PE004",
+        categoria: "Pedales de Efectos",
+        nombre: "Pedal Afinador Cromático",
+        marca: "Boss",
+        modelo: "TU-3",
+        stock: 8,
+        precio: 89990,
+        descripcion: "Afinador cromático en formato pedal con indicador visual para realizar ajustes rápidos y precisos durante ensayos o presentaciones.",
+        imagen: "Images/CatalogoImages/PE004-front.png",
+        imagenS: "Images/CatalogoImages/PE004-side.png",
+        imagenB: "Images/CatalogoImages/PE004-back.png",
+        imagenD: "Images/CatalogoImages/PE004-detail.png"
+    },
+
+    {
+        id: 35,
+        codigo: "PE005",
+        categoria: "Pedales de Efectos",
+        nombre: "Pedal Delay Analógico",
+        marca: "MXR",
+        modelo: "Carbon Copy",
+        stock: 4,
+        precio: 179990,
+        descripcion: "Pedal de delay analógico con hasta 600 ms de retardo, caracterizado por repeticiones cálidas y de textura orgánica.",
+        imagen: "Images/CatalogoImages/PE005-front.png",
+        imagenS: "Images/CatalogoImages/PE005-side.png",
+        imagenB: "Images/CatalogoImages/PE005-back.png",
+        imagenD: "Images/CatalogoImages/PE005-detail.png"
+    },
+
+    {
+        id: 36,
+        codigo: "PE006",
+        categoria: "Pedales de Efectos",
+        nombre: "Pedal Overdrive",
+        marca: "Ibanez",
+        modelo: "TS9",
+        stock: 6,
+        precio: 99990,
+        descripcion: "Pedal Tube Screamer de overdrive con saturación suave y dinámica, ideal para blues, rock y realce de amplificadores.",
+        imagen: "Images/CatalogoImages/PE006-front.png",
+        imagenS: "Images/CatalogoImages/PE006-side.png",
+        imagenB: "Images/CatalogoImages/PE006-back.png",
+        imagenD: "Images/CatalogoImages/PE006-detail.png"
+    },
+
+    {
+        id: 37,
+        codigo: "AC001",
+        categoria: "Accesorios",
+        nombre: "Cuerdas Eléctrica 09-42",
+        marca: "Ernie Ball",
+        modelo: "Super Slinky",
+        stock: 25,
+        precio: 8990,
+        descripcion: "Juego de seis cuerdas para guitarra eléctrica calibre 09-42, de tensión ligera y gran flexibilidad para bendings y vibratos.",
+        imagen: "Images/CatalogoImages/AC001-front.png",
+        imagenS: "Images/CatalogoImages/AC001-side.png",
+        imagenB: "Images/CatalogoImages/AC001-back.png",
+        imagenD: "Images/CatalogoImages/AC001-detail.png"
+    },
+
+    {
+        id: 38,
+        codigo: "AC002",
+        categoria: "Accesorios",
+        nombre: "Cuerdas Acústica 12-53",
+        marca: "Ernie Ball",
+        modelo: "Earthwood",
+        stock: 20,
+        precio: 10990,
+        descripcion: "Juego de cuerdas para guitarra acústica calibre 12-53 en bronce fósforo, diseñado para entregar un sonido cálido y definido.",
+        imagen: "Images/CatalogoImages/AC002-front.png",
+        imagenS: "Images/CatalogoImages/AC002-side.png",
+        imagenB: "Images/CatalogoImages/AC002-back.png",
+        imagenD: "Images/CatalogoImages/AC002-detail.png"
+    },
+
+    {
+        id: 39,
+        codigo: "AC003",
+        categoria: "Accesorios",
+        nombre: "Cuerdas Bajo 45-105",
+        marca: "Ernie Ball",
+        modelo: "Regular Slinky",
+        stock: 12,
+        precio: 14990,
+        descripcion: "Juego de cuatro cuerdas para bajo eléctrico calibre 45-105 con entorchado de níquel y respuesta definida en graves.",
+        imagen: "Images/CatalogoImages/AC003-front.png",
+        imagenS: "Images/CatalogoImages/AC003-side.png",
+        imagenB: "Images/CatalogoImages/AC003-back.png",
+        imagenD: "Images/CatalogoImages/AC003-detail.png"
+    },
+
+    {
+        id: 40,
+        codigo: "AC004",
+        categoria: "Accesorios",
+        nombre: "Púas x10 0,73 mm",
+        marca: "Fender",
+        modelo: "351",
+        stock: 50,
+        precio: 3990,
+        descripcion: "Set de diez púas Fender 351 de grosor medio 0,73 mm, adecuadas para rasgueos, riffs y ejecución melódica.",
+        imagen: "Images/CatalogoImages/AC004-front.png",
+        imagenS: "Images/CatalogoImages/AC004-side.png",
+        imagenB: "Images/CatalogoImages/AC004-back.png",
+        imagenD: "Images/CatalogoImages/AC004-detail.png"
+    },
+
+    {
+        id: 41,
+        codigo: "AC005",
+        categoria: "Accesorios",
+        nombre: "Capotraste",
+        marca: "Dunlop",
+        modelo: "Trigger",
+        stock: 15,
+        precio: 12990,
+        descripcion: "Capotraste de resorte para guitarra de seis cuerdas, diseñado para realizar cambios rápidos de tonalidad durante la interpretación.",
+        imagen: "Images/CatalogoImages/AC005-front.png",
+        imagenS: "Images/CatalogoImages/AC005-side.png",
+        imagenB: "Images/CatalogoImages/AC005-back.png",
+        imagenD: "Images/CatalogoImages/AC005-detail.png"
+    },
+
+    {
+        id: 42,
+        codigo: "AC006",
+        categoria: "Accesorios",
+        nombre: "Afinador de Clip",
+        marca: "Snark",
+        modelo: "SN-5",
+        stock: 20,
+        precio: 8990,
+        descripcion: "Afinador cromático de clip con pantalla giratoria, diseñado para realizar una afinación rápida y cómoda directamente desde el instrumento.",
+        imagen: "Images/CatalogoImages/AC006-front.png",
+        imagenS: "Images/CatalogoImages/AC006-side.png",
+        imagenB: "Images/CatalogoImages/AC006-back.png",
+        imagenD: "Images/CatalogoImages/AC006-detail.png"
+    },
+
+    {
+        id: 43,
+        codigo: "AC007",
+        categoria: "Accesorios",
+        nombre: "Cable Instrumento 3 m",
+        marca: "Monster",
+        modelo: "S100-I-3",
+        stock: 15,
+        precio: 12990,
+        descripcion: "Cable de instrumento de tres metros con construcción trenzada y conectores dorados para conexión de instrumentos y amplificación.",
+        imagen: "Images/CatalogoImages/AC007-front.png",
+        imagenS: "Images/CatalogoImages/AC007-side.png",
+        imagenB: "Images/CatalogoImages/AC007-back.png",
+        imagenD: "Images/CatalogoImages/AC007-detail.png"
+    },
+
+    {
+        id: 44,
+        codigo: "AC008",
+        categoria: "Accesorios",
+        nombre: "Cable Instrumento 6 m",
+        marca: "Monster",
+        modelo: "S100-I-6",
+        stock: 10,
+        precio: 17990,
+        descripcion: "Cable de instrumento de seis metros con construcción trenzada y conectores dorados, ideal para escenarios y salas de ensayo.",
+        imagen: "Images/CatalogoImages/AC008-front.png",
+        imagenS: "Images/CatalogoImages/AC008-side.png",
+        imagenB: "Images/CatalogoImages/AC008-back.png",
+        imagenD: "Images/CatalogoImages/AC008-detail.png"
+    },
+
+    {
+        id: 45,
+        codigo: "AC009",
+        categoria: "Accesorios",
+        nombre: "Soporte Guitarra de Piso",
+        marca: "Hercules",
+        modelo: "GS302B",
+        stock: 12,
+        precio: 22990,
+        descripcion: "Soporte plegable de piso para guitarra con sistema de sujeción, diseñado para mantener el instrumento estable y protegido.",
+        imagen: "Images/CatalogoImages/AC009-front.png",
+        imagenS: "Images/CatalogoImages/AC009-side.png",
+        imagenB: "Images/CatalogoImages/AC009-back.png",
+        imagenD: "Images/CatalogoImages/AC009-detail.png"
+    },
+
+    {
+        id: 46,
+        codigo: "AC010",
+        categoria: "Accesorios",
+        nombre: "Soporte Guitarra de Pared",
+        marca: "Hercules",
+        modelo: "WAH-202",
+        stock: 10,
+        precio: 18990,
+        descripcion: "Soporte mural para guitarra con sistema automático de sujeción, ideal para almacenar o exhibir instrumentos de forma segura.",
+        imagen: "Images/CatalogoImages/AC010-front.png",
+        imagenS: "Images/CatalogoImages/AC010-side.png",
+        imagenB: "Images/CatalogoImages/AC010-back.png",
+        imagenD: "Images/CatalogoImages/AC010-detail.png"
+    },
+
+    {
+        id: 47,
+        codigo: "ES001",
+        categoria: "Estudio y Grabación",
+        nombre: "Interfaz de Audio 2x2 USB",
+        marca: "Focusrite",
+        modelo: "Scarlett Solo",
+        stock: 4,
+        precio: 149990,
+        descripcion: "Interfaz de audio USB con entrada XLR e instrumento, dos salidas y grabación de alta resolución de hasta 24 bits/192 kHz.",
+        imagen: "Images/CatalogoImages/ES001-front.png",
+        imagenS: "Images/CatalogoImages/ES001-side.png",
+        imagenB: "Images/CatalogoImages/ES001-back.png",
+        imagenD: "Images/CatalogoImages/ES001-detail.png"
+    },
+
+    {
+        id: 48,
+        codigo: "ES002",
+        categoria: "Estudio y Grabación",
+        nombre: "Auriculares de Estudio",
+        marca: "Audio-Technica",
+        modelo: "ATH-M20x",
+        stock: 6,
+        precio: 79990,
+        descripcion: "Auriculares circumaurales de estudio con respuesta de frecuencia de 15 Hz a 20 kHz, diseñados para monitoreo y producción musical.",
+        imagen: "Images/CatalogoImages/ES002-front.png",
+        imagenS: "Images/CatalogoImages/ES002-side.png",
+        imagenB: "Images/CatalogoImages/ES002-back.png",
+        imagenD: "Images/CatalogoImages/ES002-detail.png"
+    },
+
+    {
+        id: 49,
+        codigo: "ES003",
+        categoria: "Estudio y Grabación",
+        nombre: "Auriculares de Estudio Pro",
+        marca: "Audio-Technica",
+        modelo: "ATH-M50x",
+        stock: 4,
+        precio: 219990,
+        descripcion: "Auriculares profesionales de estudio orientados a una reproducción detallada para monitoreo, edición, grabación y mezcla.",
+        imagen: "Images/CatalogoImages/ES003-front.png",
+        imagenS: "Images/CatalogoImages/ES003-side.png",
+        imagenB: "Images/CatalogoImages/ES003-back.png",
+        imagenD: "Images/CatalogoImages/ES003-detail.png"
+    },
+
+    {
+        id: 50,
+        codigo: "ES004",
+        categoria: "Estudio y Grabación",
+        nombre: "Monitor de Estudio 5\"",
+        marca: "Yamaha",
+        modelo: "HS5",
+        stock: 2,
+        precio: 349990,
+        descripcion: "Monitor activo de estudio de 5 pulgadas con respuesta plana, diseñado para realizar mezclas y monitoreo con mayor precisión.",
+        imagen: "Images/CatalogoImages/ES004-front.png",
+        imagenS: "Images/CatalogoImages/ES004-side.png",
+        imagenB: "Images/CatalogoImages/ES004-back.png",
+        imagenD: "Images/CatalogoImages/ES004-detail.png"
+    },
+
+    {
+        id: 51,
+        codigo: "ES005",
+        categoria: "Estudio y Grabación",
+        nombre: "Pop Filter",
+        marca: "Sennheiser",
+        modelo: "MZP 40",
+        stock: 8,
+        precio: 14990,
+        descripcion: "Filtro antipop de doble malla con brazo flexible, diseñado para reducir consonantes explosivas durante grabaciones vocales.",
+        imagen: "Images/CatalogoImages/ES005-front.png",
+        imagenS: "Images/CatalogoImages/ES005-side.png",
+        imagenB: "Images/CatalogoImages/ES005-back.png",
+        imagenD: "Images/CatalogoImages/ES005-detail.png"
+    }
+
+];
+
+
+let lista = document.getElementById("listaProductos");
+
+for (let i= 0; i < productos.length; i++){
+    lista.innerHTML +=`
+
+    <div class="card card-catalogo" style="width: 18rem;">
+    
+        <img src="${productos[i].imagen}"
+            onclick="verDetalle(${productos[i].id})" 
+            class="manito size-imagen"
+            alt="Imagen producto">
+        <div class="card-body">
+        <h5 class="card-title"> ${productos[i].marca}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary"class="manito" href="detalle.html" onclick="verDetalle(${productos[i].id})">${productos[i].nombre}</h6>
+        <p class="precio">Precio: $${productos[i].precio.toLocaleString("es-CL")}</p>    
+        <a href="#" class="card-link">Comprar Ahora</a>
+        <a href="#" class="card-link">Agregar Carrito</a>  
+        </div> 
+    
+    </div>
+    
+    `;
+
+
+    
+    
+  
+
+
+    function verDetalle(id){
+
+        let productoSeleccionado;
+
+        for (let i=0 ; i< productos.length; i++){
+            if(productos[i].id === id){
+                productoSeleccionado = productos[i];
+            }
+        }
+
+
+        localStorage.setItem(
+            "producto",
+            JSON.stringify(productoSeleccionado)
+        );
+
+
+        window.location.href = "detalle.html";
+
+    }
+
+
+}
+
+    function agregarCarro(id){
+        let productoSeleccionado;
+
+        for (let i=0; i<productos.length; i++){
+            if(productos[i].id === id) {
+                productoSeleccionado = productos[i];
+            }
+        }
+
+         let carrito = JSON.parse(localStorage.getItem("carrito"));
+
+         if(carrito === null){
+            carrito = [];
+         }
+
+         carrito.push(productoSeleccionado);
+
+         localStorage.setItem("carrito" , JSON.stringify(carrito));
+         alert("Producto agregado al carrito")
+    
+    }
