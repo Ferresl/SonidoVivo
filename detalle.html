@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Catalogo.css">
+
+    <title>Detalle del producto</title>
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="inicio.html">
+                    Inicio
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="productos.html">
+                                Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Nosotros
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Pricing
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-gris">
+        <section class="section-blanco">
+            <h1>
+                Detalle del producto
+            </h1>
+            <div class="detalle-contenido">
+                <div class="detalle-imagen">
+                    <div
+                        id="carouselExampleFade"
+                        class="carousel slide  carousel-fade"
+                    >
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img
+                                    id="imagen"
+                                    class="d-block imagen-producto"
+                                >
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                    id="imagenS"
+                                    class="d-block imagen-producto"
+                                >
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                    id="imagenB"
+                                    class="d-block imagen-producto"
+                                >
+                            </div>
+
+                            <div class="carousel-item">
+                                <img
+                                    id="imagenD"
+                                    class="d-block imagen-producto"
+                                >
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#carouselExampleFade"
+                            data-bs-slide="prev"
+                        >
+
+                            <span class="carousel-control-prev-icon"></span>
+
+                        </button>
+
+
+                        <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#carouselExampleFade"
+                            data-bs-slide="next"
+                        >
+
+                            <span class="carousel-control-next-icon"></span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detalle-info">
+                    <h2 id="nombre"></h2>
+                    <h3 id="marca"></h3>
+                    <p id="precio"></p>
+                    <p id="descripcion"></p>
+                    <br>
+                    <a href="productos.html">
+                        Volver a productos
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="detalle.js"></script>
+</body>
+</html>
