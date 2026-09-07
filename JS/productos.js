@@ -788,7 +788,7 @@ let productos = [
         id: 50,
         codigo: "ES004",
         categoria: "Estudio y Grabación",
-        nombre: "Monitor de Estudio 5\"",
+        nombre: "Monitor de Estudio 5",
         marca: "Yamaha",
         modelo: "HS5",
         stock: 2,
@@ -929,14 +929,13 @@ botonFiltrar.addEventListener("click", function() {
 
 });
 
+
+
 function mostrarProductosFiltrados(listaFiltrada) {
 
     lista.innerHTML = "";
-
     listaFiltrada.forEach((producto) => {
-
         lista.innerHTML += `
-
             <div class="card card-catalogo" style="width: 18rem;">
 
                 <img
