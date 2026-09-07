@@ -1,54 +1,277 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/catalogo.css">
+    <link rel="stylesheet" href="CSS/funcionalidad.css">
+    <link rel="stylesheet" href="CSS/imagen.css">
+    <link rel="stylesheet" href="CSS/inicio.css">
+
+
     <title>SonidoVivo</title>
 </head>
+
+
+
+
 <body>
-    <header> 
+
+    <header>
+
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Inicio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Catalogo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Quienes somos</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
+
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="Inicio.html">Inicio</a>
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="productos.html">Productos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#novedades">Novedades</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#nosotros">Nosotros</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto">Contacto</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="registro.html">Regístrate</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Iniciar Sesión</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
     </header>
-    
+
+    <h1>
+                Novedades
+            </h1>
+
+    <main>
+
+        <section id="novedades" class="section-blanco">
+
+            <div
+                id="carouselExampleIndicators"
+                class="carousel slide detalle-imagen"
+            >
+
+                <div class="carousel-indicators">
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="Slide 1"
+                    >
+                    </button>
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="1"
+                        aria-label="Slide 2"
+                    >
+                    </button>
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="2"
+                        aria-label="Slide 3"
+                    >
+                    </button>
+
+                </div>
+
+                <div
+                    class="carousel-inner"
+                    id="listaProductosNovedad"
+                >
+
+                </div>
+
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev"
+                >
+
+                    <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                    >
+                    </span>
+
+                    <span class="visually-hidden">
+                        Previous
+                    </span>
+
+                </button>
+
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next"
+                >
+                    <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                    >
+                    </span>
+
+                    <span class="visually-hidden">
+                        Next
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <br>
+
+        <h1>
+            Nosotros
+        </h1>
+
+        <section id="nosotros" class="section-blanco">
+
+            <div class="detalle-contenido">
+
+                <img
+                    class="imagen-producto"
+                    src="Images/Equipo/trabajadores.png"
+                    alt="Equipo de Sonido Vivo"
+                >
+
+
+                <p class="detalle-info">
+
+                    En Sonido Vivo llevamos más de 11 años acercando
+                    la música a nuestros clientes desde Viña del Mar.
+
+                    Somos una tienda especializada en instrumentos musicales,
+                    equipos de sonido y accesorios, con un catálogo que incluye
+                    guitarras, bajos, baterías, teclados, amplificadores,
+                    micrófonos, pedales y mucho más.
+
+                    Nuestro equipo está formado por el dueño de la tienda
+                    y dos vendedores, quienes trabajan día a día para entregar
+                    una atención cercana y ayudar a cada cliente a encontrar
+                    el instrumento o equipo que necesita.
+
+                    Además de la venta de productos, también contamos con
+                    servicio de reparación de instrumentos de cuerda.
+
+                    Nuestro objetivo es que tanto músicos principiantes como
+                    experimentados puedan encontrar en Sonido Vivo un lugar
+                    confiable para desarrollar su pasión por la música.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <br>
+
+        <h2>
+                Contacto
+            </h2>
+
+        <section
+            id="contacto"
+            class="section-blanco"
+        >
+
+            
+
+
+            <div class="detalle-contenido">
+
+                <a href="https://www.instagram.com/sonido_.vivo/" target="_blank">
+
+                    <img
+                        class="imagen-producto"
+                        src="Images/Contacto/Instagram.png"
+                        alt="Instagram Sonido Vivo"
+                    >
+
+                </a>
+
+
+                <a href="https://web.whatsapp.com/" target="_blank">
+
+                    <img
+                        class="imagen-producto"
+                        src="Images/Contacto/WhatsApp.png"
+                        alt="WhatsApp Sonido Vivo"
+                    >
+
+                </a>
+
+                <a href="https://www.facebook.com/profile.php?id=100057384885975" target="_blank">
+
+                    <img
+                        class="imagen-producto"
+                        src="Images/Contacto/Facebook.png"
+                        alt="Facebook Sonido Vivo"
+                    >
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/productosNovedad.js"></script>
+
+
 </body>
+
 </html>
