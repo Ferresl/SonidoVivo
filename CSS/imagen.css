@@ -2,9 +2,18 @@
     width: 200px;
     height:200px ;
     margin: 20px 20px;
+    border-radius: 12px;
 }
-.banner{
-    background-color: rgb(9, 97, 212);
-    color: aliceblue;
-    font-size: 90px;
+
+.imagen-producto {
+    width: 100%;
+    height: 450px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.imagen-inicio{
+    object-fit: contain;
+    width: 100%;
+    
 }

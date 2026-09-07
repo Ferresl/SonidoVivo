@@ -1,13 +1,67 @@
-main {
-    background:
-        linear-gradient(
-            rgba(232, 232, 232, 0.80),
-            rgba(232, 232, 232, 0.80)
-        ),
-        url("../Images/Fondo.png");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+.contenedor-novedades {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
 }
+
+.banner-novedades {
+    width: 290px;
+    height: 450px;
+
+    flex: 0 0 290px;
+
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.banner-novedades img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+.carousel-novedades {
+    flex: 1;
+    position: relative;
+    height: 450px;
+}
+
+.grupo-cards {
+    display: flex;
+    gap: 18px;
+    padding: 0 45px;
+    height: 450px;
+    align-items: stretch;
+}
+
+.imagen-novedad {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.marca-novedad {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.precio-novedad {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3528d8;
+    margin-bottom: 12px;
+}
+
+
+.background-text{
+    background-color: rgb(221, 221, 221);
+    padding: 10px;
+    border-radius: 12px;
+}
+
+
