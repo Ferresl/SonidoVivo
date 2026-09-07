@@ -76,11 +76,11 @@ function actualizarCarrito() {
 
         contenido += `<article class="carrito-fila">
             <a href="detalle.html?id=${producto.id}">
-                <img class="foto-carrito" src="${producto.imagen}" alt="${producto.nombre}">
+                <img class="foto-carrito" src="${escaparHTML(producto.imagen)}" alt="${escaparHTML(producto.nombre)}">
             </a>
             <div>
-                <h2 class="titulo-carrito"><a class="nombre-producto" href="detalle.html?id=${producto.id}">${producto.nombre}</a></h2>
-                <p class="texto-carrito">${producto.marca} · ${producto.modelo}</p>
+                <h2 class="titulo-carrito"><a class="nombre-producto" href="detalle.html?id=${producto.id}">${escaparHTML(producto.nombre)}</a></h2>
+                <p class="texto-carrito">${escaparHTML(producto.marca)} · ${escaparHTML(producto.modelo)}</p>
                 <p class="texto-carrito">${moneda(producto.precio)} por unidad</p>
             </div>
             <div>

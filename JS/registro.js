@@ -43,6 +43,7 @@ function validarRun(run) {
 
     run = run.replace(/\./g, "").replace(/-/g, "").toUpperCase();
 
+    if (!/^\d{7,8}[0-9K]$/.test(run)) return false;
     let cuerpo = run.slice(0, -1);
     let dv = run.slice(-1);
 
@@ -115,6 +116,12 @@ function registrarUsuario() {
         return;
     }
 
+    correo = correo.trim().toLowerCase();
+    const normalizarRun = r => r.replace(/[.\-]/g,'').toUpperCase();
+    if (usuarios.some(u => u.correo.toLowerCase() === correo || normalizarRun(u.run) === normalizarRun(run))) { alert('Correo o RUN ya registrado.'); return; }
+    const nuevos = [...usuarios, {id:Math.max(0,...usuarios.map(u=>u.id))+1,run,nombre,apellidos,correo,region,comuna,direccion,clave,tipoUsuario:'Cliente'}];
+    if (!guardarLocal('sonidovivo.usuarios', nuevos)) return;
+    usuarios = nuevos;
     alert("Registro exitoso. Ahora puedes iniciar sesión.");
 
     window.location.href = "login.html";

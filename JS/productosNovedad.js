@@ -108,6 +108,8 @@ let productosNovedad =[
 
 ];
 
+productosNovedad = productosNovedad.map(p => productos.find(actual => actual.id === p.id)).filter(Boolean);
+
 let listaNovedad =
     document.getElementById("listaProductosNovedad");
 
@@ -124,24 +126,24 @@ for (let i = 0; i < productosNovedad.length; i += 4) {
             <div class="card tarjeta-producto tarjeta-novedad rejilla-novedad">
 
                 <img
-                    src="${producto.imagen}"
+                    src="${escaparHTML(producto.imagen)}"
                     class="card-img-top imagen-novedad manito imagen-completa"
-                    alt="${producto.nombre}"
+                    alt="${escaparHTML(producto.nombre)}"
                     onclick="verDetalle(${producto.id})"
                 >
 
                 <div class="card-body contenido-novedad rejilla-novedad">
 
                     <h6 class="marca-novedad elemento-novedad">
-                        ${producto.marca}
+                        ${escaparHTML(producto.marca)}
                     </h6>
 
                     <h5 class="card-title elemento-novedad">
-                        ${producto.nombre}
+                        ${escaparHTML(producto.nombre)}
                     </h5>
 
                     <p class="modelo-novedad elemento-novedad">
-                        ${producto.modelo}
+                        ${escaparHTML(producto.modelo)}
                     </p>
 
                     <p class="precio-novedad elemento-novedad">

@@ -818,3 +818,5 @@ let productos = [
 
 ];
 
+
+productos = leerLocal('sonidovivo.productos', productos);

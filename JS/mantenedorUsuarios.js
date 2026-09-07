@@ -1,31 +1,3 @@
-let usuarios = [
-
-    {
-        id: 1,
-        run: "19011022-K",
-        nombre: "Camila",
-        apellidos: "Rojas Muñoz",
-        correo: "camila.rojas@correo.cl",
-        tipoUsuario: "Cliente",
-        region: "Metropolitana",
-        comuna: "Quilicura",
-        direccion: "Los Aromos 245"
-    },
-
-    {
-        id: 2,
-        run: "17233144-5",
-        nombre: "Matías",
-        apellidos: "González Pérez",
-        correo: "matias.gonzalez@correo.cl",
-        tipoUsuario: "Administrador",
-        region: "Metropolitana",
-        comuna: "Santiago",
-        direccion: "Av. Libertador 1200"
-    }
-
-];
-
 let regionesComunas = {
 
     "Metropolitana": ["Santiago", "Quilicura", "Providencia", "Maipú"],
@@ -84,11 +56,11 @@ function renderizarTablaUsuarios() {
 
         cuerpoTablaUsuarios.innerHTML += `
             <tr>
-                <td>${usuarios[i].run}</td>
-                <td>${usuarios[i].nombre}</td>
-                <td>${usuarios[i].apellidos}</td>
-                <td>${usuarios[i].correo}</td>
-                <td>${usuarios[i].tipoUsuario}</td>
+                <td>${escaparHTML(usuarios[i].run)}</td>
+                <td>${escaparHTML(usuarios[i].nombre)}</td>
+                <td>${escaparHTML(usuarios[i].apellidos)}</td>
+                <td>${escaparHTML(usuarios[i].correo)}</td>
+                <td>${escaparHTML(usuarios[i].tipoUsuario)}</td>
                 <td>
                     <button class="btn btn-sm btn-dark" onclick="editarUsuario(${usuarios[i].id})">Editar</button>
                 </td>
@@ -131,40 +103,23 @@ function editarUsuario(id) {
 
 }
 
-function guardarCambiosUsuario() {
-
-    let runIngresado = document.getElementById("editRun").value;
-
-    if (!validarRun(runIngresado)) {
-        alert("El RUN ingresado no es válido");
-        return;
-    }
-
-    for (let i = 0; i < usuarios.length; i++) {
-
-        if (usuarios[i].id === idUsuarioEditando) {
-
-            usuarios[i].run = runIngresado;
-            usuarios[i].nombre = document.getElementById("editNombreUsuario").value;
-            usuarios[i].apellidos = document.getElementById("editApellidos").value;
-            usuarios[i].correo = document.getElementById("editCorreoUsuario").value;
-            usuarios[i].tipoUsuario = document.getElementById("editTipoUsuario").value;
-            usuarios[i].region = document.getElementById("editRegion").value;
-            usuarios[i].comuna = document.getElementById("editComuna").value;
-            usuarios[i].direccion = document.getElementById("editDireccion").value;
-
-        }
-
-    }
-
-    alert("Usuario actualizado");
-
-    cerrarFormularioUsuario();
-
-    renderizarTablaUsuarios();
-
+function validarUsuario(u) {
+    u.correo=u.correo.trim().toLowerCase();
+    if (![u.nombre,u.apellidos,u.region,u.comuna,u.direccion].every(v=>v.trim()) || !validarRun(u.run) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(u.correo) || !u.clave || u.clave.length<4 || u.clave.length>10) { alert('Completa todos los datos, un RUN y correo válidos y una clave de 4 a 10 caracteres.'); return false; }
+    const normalizar=r=>r.replace(/[.\-]/g,'').toUpperCase();
+    if (usuarios.some(x=>x.id!==u.id && (x.correo.toLowerCase()===u.correo || normalizar(x.run)===normalizar(u.run)))) { alert('Correo o RUN ya registrado.'); return false; }
+    return true;
 }
-
+function guardarCambiosUsuario() {
+    const actual=usuarios.find(u=>u.id===idUsuarioEditando);
+    const valor=id=>document.getElementById(id).value;
+    const usuario={...actual,run:valor('editRun'),nombre:valor('editNombreUsuario'),apellidos:valor('editApellidos'),correo:valor('editCorreoUsuario'),tipoUsuario:valor('editTipoUsuario'),region:valor('editRegion'),comuna:valor('editComuna'),direccion:valor('editDireccion')};
+    if (!validarUsuario(usuario)) return;
+    if (usuario.id===usuarioActual()?.id && usuario.tipoUsuario!=='Administrador') { alert('No puedes quitarte tu propio acceso de administrador.'); return; }
+    const nuevos=usuarios.map(u=>u.id===usuario.id?usuario:u);
+    if (!guardarLocal('sonidovivo.usuarios',nuevos)) return;
+    usuarios=nuevos; cerrarFormularioUsuario(); renderizarTablaUsuarios(); alert('Usuario actualizado');
+}
 function cerrarFormularioUsuario() {
     document.getElementById("formularioEditarUsuario").style.display = "none";
 }
@@ -185,7 +140,7 @@ function guardarNuevoUsuario() {
         return;
     }
 
-    let nuevoId = usuarios.length + 1;
+    let nuevoId = Math.max(0,...usuarios.map(u=>u.id))+1;
 
     let usuarioNuevo = {
         id: nuevoId,
@@ -199,7 +154,11 @@ function guardarNuevoUsuario() {
         direccion: document.getElementById("nuevoDireccion").value
     };
 
-    usuarios.push(usuarioNuevo);
+    usuarioNuevo.clave=document.getElementById('nuevoClave').value;
+    if (!validarUsuario(usuarioNuevo)) return;
+    const nuevos=[...usuarios,usuarioNuevo];
+    if (!guardarLocal('sonidovivo.usuarios',nuevos)) return;
+    usuarios=nuevos;
 
     alert("Usuario agregado");
 
@@ -213,6 +172,7 @@ function cerrarFormularioNuevoUsuario() {
 
     document.getElementById("formularioNuevoUsuario").style.display = "none";
 
+    document.getElementById("nuevoClave").value = "";
     document.getElementById("nuevoRun").value = "";
     document.getElementById("nuevoNombreUsuario").value = "";
     document.getElementById("nuevoApellidos").value = "";
@@ -227,6 +187,7 @@ function validarRun(run) {
 
     run = run.replace(/\./g, "").replace(/-/g, "").toUpperCase();
 
+    if (!/^\d{7,8}[0-9K]$/.test(run)) return false;
     let cuerpo = run.slice(0, -1);
     let dv = run.slice(-1);
 

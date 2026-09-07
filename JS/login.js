@@ -24,22 +24,10 @@ function ingresar() {
         return;
     }
 
-    // 5. Comparo contra los usuarios fijos (mientras no hay base de datos)
-    if (correo === "adminsonido@vivo.cl" && clave === "admin1234") {
-
-        window.location.href = "admin.html";
-
-    } else if (correo === "clientesonido@vivo.cl" && clave === "cliente123") {
-
-        window.location.href = "Inicio.html";
-
-    } else {
-
-        // 6. Si no coincide con ninguno, error
-        alert("Correo o clave incorrectos");
-
-    }
-
+    const usuario = usuarios.find(u => u.correo.toLowerCase() === correo.trim().toLowerCase() && u.clave === clave);
+    if (!usuario) { alert('Correo o clave incorrectos'); return; }
+    sessionStorage.setItem('sonidovivo.sesion', usuario.id);
+    window.location.href = usuario.tipoUsuario === 'Administrador' ? 'admin.html' : 'Inicio.html';
 }
 
 function mostrarClave() {

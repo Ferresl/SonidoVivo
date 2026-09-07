@@ -95,10 +95,10 @@ function mostrarProductos(resultado) {
         let p = resultado[i];
         lista.innerHTML += `
         <article class="card tarjeta-catalogo">
-            <a href="detalle.html?id=${p.id}"><img src="${p.imagen}" class="imagen-catalogo" alt="${p.nombre}"></a>
+            <a href="detalle.html?id=${p.id}"><img src="${escaparHTML(p.imagen)}" class="imagen-catalogo" alt="${escaparHTML(p.nombre)}"></a>
             <div class="card-body contenido-catalogo">
-                <h5 class="card-title">${p.marca}</h5>
-                <h6 class="titulo-producto"><a class="nombre-producto" href="detalle.html?id=${p.id}">${p.nombre} ${p.modelo}</a></h6>
+                <h5 class="card-title">${escaparHTML(p.marca)}</h5>
+                <h6 class="titulo-producto"><a class="nombre-producto" href="detalle.html?id=${p.id}">${escaparHTML(p.nombre)} ${escaparHTML(p.modelo)}</a></h6>
                 <p class="precio precio-catalogo">Precio: ${moneda(p.precio)}</p>
                 <button type="button" class="btn btn-outline-dark boton-catalogo" onclick="agregarCarro(${p.id})">Agregar al carrito</button>
             </div>
