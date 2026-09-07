@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="CSS/funcionalidad.css">
     <link rel="stylesheet" href="CSS/imagen.css">
     <link rel="stylesheet" href="CSS/catalogo.css">
-
-
+    <link rel="stylesheet" href="CSS/carrito.css">
 
     <title>SonidoVivo</title>
 </head>
@@ -19,7 +18,7 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary  ">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary ">
             <div class="container-fluid">
 
                 
@@ -35,9 +34,9 @@
 
                 <div class="collapse navbar-collapse " id="navbarNav">
 
-                    <ul class="navbar-nav w-100 ">
-                        <li class="nav-item "></li>
-                            <a class="navbar-brand" href="inicio.html">Inicio</a>
+                    <ul class="navbar-nav w-100  enlaces-menu">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="inicio.html">Inicio</a>
                         </li>
 
                         <li class="nav-item ">
@@ -57,15 +56,15 @@
                                 Contacto
                             </a>
                         </li>
-                        <li class="nav-item  ">
+                        <li class="nav-item acceso-sesion">
                             <a class="nav-link" href="inicio.html#contacto">
                                 Inicia Sesion
                             </a>
                         </li>
  
-                        <li class="nav-item ms-auto ">
-                            <a class="nav-link carrito" href="inicio.html#contacto">
-                               <img  class="carrito" src="Images/Inicio/Carrito.png">
+                        <li class="nav-item">
+                            <a class="enlace-carrito nav-link carrito" href="inicio.html#contacto">
+                               <img  class="icono-carrito carrito" src="Images/Inicio/Carrito.png">
                             </a>
                         </li>
 
@@ -77,13 +76,10 @@
         </nav>
     </header>
 
+    <img class="portada-catalogo" src="Images/Banners/BannerProductosDisponibles.png"> 
 
-    <img class="banner-catalogo" src="Images/Banners/BannerProductosDisponibles.png"> 
-
-
-
-    <main>
-        <section class="zona-catalogo">
+    <main class="fondo-pagina">
+        <section class="seccion-pagina zona-catalogo fila-contenido">
 
         <aside class="filtros">
 
@@ -91,27 +87,27 @@
 
             <h5>Categoría</h5>
 
-            <label>
+            <label class="etiqueta-filtro">
                 <input type="checkbox" value="Guitarras Acústicas">
                 Guitarras Acústicas
             </label>
 
-            <label>
+            <label class="etiqueta-filtro">
                 <input type="checkbox" value="Guitarras Eléctricas">
                 Guitarras Eléctricas
             </label>
 
-            <label>
+            <label class="etiqueta-filtro">
                 <input type="checkbox" value="Bajos Eléctricos">
                 Bajos
             </label>
 
-            <label>
+            <label class="etiqueta-filtro">
                 <input type="checkbox" value="Baterías">
                 Baterías
             </label>
 
-            <label>
+            <label class="etiqueta-filtro">
                 <input type="checkbox" value="Micrófonos">
                 Micrófonos
             </label>
@@ -120,17 +116,17 @@
 
             <h5>Marca</h5>
 
-            <label>
+            <label class="etiqueta-filtro">
                 <input type="checkbox" value="Yamaha">
                 Yamaha
             </label>
 
-            <label>
+            <label class="etiqueta-filtro">
                 <input type="checkbox" value="Fender">
                 Fender
             </label>
 
-            <label>
+            <label class="etiqueta-filtro">
                 <input type="checkbox" value="Epiphone">
                 Epiphone
             </label>
@@ -141,7 +137,7 @@
 
             <input
                 type="number"
-                id="precioMaximo"
+                id="precioMaximo" min="0" aria-label="Precio máximo"
                 placeholder="Ej: 300000"
             >
 
@@ -149,23 +145,32 @@
                 Filtrar
             </button>
 
-        </aside>
+        <button id="btnLimpiar" class="btn btn-outline-dark mt-2">Limpiar filtros</button></aside>
 
-
-        <div 
-        id="listaProductos" class="catalogoOrden">
-        </div>
+        <div class="resultados-catalogo">
+    <div class="barra-catalogo">
+        <label class="etiqueta-orden" for="ordenCatalogo">Ordenar por</label>
+        <select id="ordenCatalogo" class="form-select selector-orden">
+            <option value="">Orden original</option>
+            <option value="precio-asc">Precio: menor a mayor</option>
+            <option value="precio-desc">Precio: mayor a menor</option>
+            <option value="nombre-asc">Nombre: A a Z</option>
+            <option value="nombre-desc">Nombre: Z a A</option>
+        </select>
+    </div>
+    <div id="listaProductos" class="catalogo-orden"></div>
+</div>
 
     </section>
 </main>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="JS/productos.js"></script>
+    <script src="JS/carrito.js"></script>
+    <script src="JS/catalogo.js"></script>
     
 
 </body>
 
-
-
 </html>
+
