@@ -1,60 +1,55 @@
-.manito{
+.fila-contenido {
+    display: flex;
+    align-items: flex-start;
+}
+
+.manito {
     cursor: pointer;
 }
 
-.precio{
+.precio {
     color: rgb(38, 38, 192);
     font-size: 20px;
 }
 
-.card-catalogo {
-    
-    width: 100% ;
+.tarjeta-producto {
+    width: 100%;
     max-width: 280px;
-   
 }
 
-.section-blanco {
+.seccion-blanca {
     background-color: white;
     width: 90%;
     max-width: 1500px;
-    margin: 0 auto;
-    padding: 60px;
-    margin-top: 40px;
+    margin: 40px auto 0;
+    padding: 30px;
 }
 
 .detalle-contenido {
-    display: flex;
     gap: 50px;
-    align-items: flex-start;
     margin-top: 70px;
 }
 
-
-.carrito{
-    padding: auto;
+.enlace-carrito {
     margin-right: 70px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
-
-.carrito img{
+.icono-carrito {
+    margin: 0;
     width: 35px;
     height: 35px;
     padding: 4px;
 }
 
-.separador-nav{
-    border-left: 1px solid black;
-    height: 35px;
-    padding: auto;
-}
-
-.detalle-info {
+.informacion-producto {
     width: 40%;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
+.control-carrusel {
     width: 42px;
     height: 70px;
     background: white;
@@ -65,17 +60,28 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
 
-.carousel-control-prev {
+.control-anterior {
     left: -10px;
 }
 
-.carousel-control-next {
+.control-siguiente {
     right: -10px;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
+.icono-carrusel {
     filter: invert(1);
     width: 18px;
     height: 18px;
 }
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nombre-producto {
+    color: inherit;
+    text-decoration: none;
+}
+

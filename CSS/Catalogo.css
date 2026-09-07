@@ -1,21 +1,16 @@
-
-.banner-catalogo{
+.portada-catalogo {
     width: 100%;
 }
+
 .zona-catalogo {
-    display: flex;
-    align-items: flex-start;
-
     gap: 30px;
-
     width: 96%;
     margin: 30px auto;
 }
 
 .filtros {
-   width: 220px;
+    width: 220px;
     flex-shrink: 0;
-
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -24,24 +19,75 @@
     margin-top: 20px;
 }
 
-.filtros label {
+.etiqueta-filtro {
     display: block;
     margin-bottom: 10px;
 }
 
-.catalogoOrden {
+.catalogo-orden {
     display: grid;
     background-color: rgb(228, 228, 228);
-    grid-template-columns: repeat(4, 280px);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
     gap: 20px;
-
-    width: fit-content;
-    flex: 0 0 auto;
-
+    width: 100%;
     margin: 0;
     padding: 10px;
-  
-    
 }
 
+.resultados-catalogo {
+    flex: 1;
+    min-width: 0;
+}
 
+.barra-catalogo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.etiqueta-orden {
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.selector-orden {
+    width: min(100%, 250px);
+}
+
+.tarjeta-catalogo {
+    width: 100%;
+    min-width: 0;
+}
+
+.imagen-catalogo {
+    display: block;
+    width: 100%;
+    height: 240px;
+    padding: 20px;
+    object-fit: contain;
+}
+
+.contenido-catalogo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.titulo-producto {
+    min-height: 2.4em;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+.precio-catalogo {
+    margin-top: auto;
+    margin-bottom: 8px;
+}
+
+.boton-catalogo {
+    align-self: flex-start;
+    max-width: 100%;
+}

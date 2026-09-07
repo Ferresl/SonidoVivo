@@ -1,11 +1,5 @@
-main {
-    background:
-        linear-gradient(
-            rgba(232, 232, 232, 0.80),
-            rgba(232, 232, 232, 0.80)
-        ),
-        url("../Images/Fondo.png");
-
+.fondo-pagina {
+    background: linear-gradient( rgba(232, 232, 232, 0.80), rgba(232, 232, 232, 0.80) ), url("../Images/Fondo.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,11 +15,6 @@ main {
     color: rgb(41, 37, 241);
 }
 
-
-section{
-
+.seccion-pagina {
     border-radius: 12px;
 }
-
-
-
