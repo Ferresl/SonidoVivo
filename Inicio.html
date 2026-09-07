@@ -10,18 +10,15 @@
     <link rel="stylesheet" href="CSS/funcionalidad.css">
     <link rel="stylesheet" href="CSS/imagen.css">
     <link rel="stylesheet" href="CSS/inicio.css">
-
+    <link rel="stylesheet" href="CSS/carrito.css">
 
     <title>SonidoVivo</title>
 </head>
 
-
-
-
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary  ">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary ">
             <div class="container-fluid">
 
                 
@@ -37,9 +34,9 @@
 
                 <div class="collapse navbar-collapse " id="navbarNav">
 
-                    <ul class="navbar-nav w-100 ">
-                        <li class="nav-item "></li>
-                            <a class="navbar-brand" href="inicio.html">Inicio</a>
+                    <ul class="navbar-nav w-100  enlaces-menu">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="inicio.html">Inicio</a>
                         </li>
 
                         <li class="nav-item ">
@@ -59,15 +56,15 @@
                                 Contacto
                             </a>
                         </li>
-                        <li class="nav-item  ">
+                        <li class="nav-item acceso-sesion">
                             <a class="nav-link" href="inicio.html#contacto">
                                 Inicia Sesion
                             </a>
                         </li>
  
-                        <li class="nav-item ms-auto ">
-                            <a class="nav-link carrito" href="inicio.html#contacto">
-                               <img  class="carrito" src="Images/Inicio/Carrito.png">
+                        <li class="nav-item">
+                            <a class="enlace-carrito nav-link carrito" href="inicio.html#contacto">
+                               <img  class="icono-carrito carrito" src="Images/Inicio/Carrito.png">
                             </a>
                         </li>
 
@@ -81,49 +78,48 @@
 
     
 
-    <main>
+    <main class="fondo-pagina">
     
-    <section>
+    <section class="seccion-pagina">
         <div > 
-            <img class="imagen-inicio" src="Images/Inicio/Imagen Inicio.png">
+            <img class="imagen-inicio imagen-completa" src="Images/Inicio/Imagen Inicio.png">
         </div>
 
     </section>
 
-    <section id="novedades" class="section-blanco ">
+    <section id="novedades" class="seccion-pagina seccion-blanca ">
         
-
 
         <h2 class="titulo-seccion">Novedades</h2>
 
-        <div class="contenedor-novedades">
+        <div class="contenedor-novedades fila-contenido">
 
-            <div class="banner-novedades">
-                <img src="Images/Inicio/Novedades.png" alt="Novedades Sonido Vivo">
+            <div class="portada-novedades">
+                <img class="imagen-portada" src="Images/Inicio/Novedades.png" alt="Novedades Sonido Vivo">
             </div>
 
-            <div id="carouselNovedades" class="carousel slide carousel-novedades">
+            <div id="carouselNovedades" class="carousel slide carrusel-novedades">
                 
                 <div class="carousel-inner" id="listaProductosNovedad">
                 </div>
 
                 <button
-                    class="carousel-control-prev"
+                    class="carousel-control-prev control-carrusel control-anterior"
                     type="button"
                     data-bs-target="#carouselNovedades"
                     data-bs-slide="prev"
                 >
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="carousel-control-prev-icon icono-carrusel" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
                 </button>
 
                 <button
-                    class="carousel-control-next"
+                    class="carousel-control-next control-carrusel control-siguiente"
                     type="button"
                     data-bs-target="#carouselNovedades"
                     data-bs-slide="next"
                 >
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="carousel-control-next-icon icono-carrusel" aria-hidden="true"></span>
                     <span class="visually-hidden">Siguiente</span>
                 </button>
 
@@ -133,19 +129,18 @@
 
     <br>
 
-    <section id="nosotros" class="section-blanco">
+    <section id="nosotros" class="seccion-pagina seccion-blanca">
             <h1 class="titulo-seccion"> Quienes Somos?</h1>
-            <div class="detalle-contenido">
+            <div class="detalle-contenido fila-contenido">
                 
 
                 <img
-                    class="imagen-producto"
+                    class="imagen-producto bordes-imagen imagen-completa"
                     src="Images/Equipo/trabajadores.png"
                     alt="Equipo de Sonido Vivo"
                 >
 
-
-                <p class="detalle-info background-text">
+                <p class="informacion-producto fondo-texto">
 
                     En Sonido Vivo llevamos más de 11 años acercando
                     la música a nuestros clientes desde Viña del Mar.
@@ -174,64 +169,75 @@
         </section>
 
         <br>
+        <section  class="seccion-pagina">
+            <div class="contenedor">
+
+                <a class="enlace-categoria" href="productos.html?categoria=Bajos%20El%C3%A9ctricos" aria-label="Ver todo en Bajos"><img class="imagen-producto-categoria manito bordes-imagen" src="Images/Inicio/Todo en Bajos.png" alt="Todo en Bajos"></a>
+                <a class="enlace-categoria" href="productos.html?categoria=Bater%C3%ADas" aria-label="Ver todo en Baterias"><img class="imagen-producto-categoria manito bordes-imagen" src="Images/Inicio/Todo en Baterias.png" alt="Todo en Baterias"></a>
+                <a class="enlace-categoria" href="productos.html?categoria=Guitarras%20Ac%C3%BAsticas&amp;categoria=Guitarras%20El%C3%A9ctricas" aria-label="Ver todo en Guitarras"><img class="imagen-producto-categoria manito bordes-imagen" src="Images/Inicio/Todo en Guitarras.png" alt="Todo en Guitarras"></a>
+                <a class="enlace-categoria" href="productos.html?categoria=Micr%C3%B3fonos" aria-label="Ver todo en Microfonos"><img class="imagen-producto-categoria manito bordes-imagen" src="Images/Inicio/Todo en Microfonos.png" alt="Todo en Microfonos"></a>
+
+            </div>
+
+        </section>
+
+        <br>
 
         
 
-        <section id="contacto" class="section-blanco">
+        <section id="contacto" class="seccion-pagina seccion-blanca">
             <h2 class="titulo-seccion">
                 Contacto
             </h2>
-            <div class="detalle-contenido">
+            <div class="detalle-contenido contacto-redes fila-contenido">
                 <a
                     href="https://www.instagram.com/sonido_.vivo/"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                 >
 
                 <img
-                    class="imagen-producto"
+                    class="imagen-producto imagen-contacto bordes-imagen imagen-completa"
                     src="Images/Contacto/Instagram.png"
                     alt="Instagram Sonido Vivo"
                     >
 
                 </a>
                 <a
-                    href="https://web.whatsapp.com/"
-                    target="_blank"
+                    href="https://wa.me/56900000000"
+                    target="_blank" rel="noopener noreferrer"
                     >
                 <img
-                    class="imagen-producto"
+                    class="imagen-producto imagen-contacto bordes-imagen imagen-completa"
                     src="Images/Contacto/WhatsApp.png"
-                    alt="WhatsApp Sonido Vivo"
+                    alt="WhatsApp Sonido Vivo — número de ejemplo"
                     >
                 </a>
 
                 <a
                     href="https://www.facebook.com/profile.php?id=100057384885975"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                 >
 
                 <img
-                        class="imagen-producto"
+                        class="imagen-producto imagen-contacto bordes-imagen imagen-completa"
                         src="Images/Contacto/Facebook.png"
                         alt="Facebook Sonido Vivo"
                     >
 
                 </a>
 
-
                 </div>
 
     </section>
 
-
     </main>
 
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/productos.js"></script>
+    <script src="JS/carrito.js"></script>
     <script src="JS/productosNovedad.js"></script>
-
 
 </body>
 
 </html>
+

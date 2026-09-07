@@ -106,9 +106,7 @@ let productosNovedad =[
         imagenD: "Images/CatalogoImages/MI004-detail.png"
     },
 
-
 ];
-
 
 let listaNovedad =
     document.getElementById("listaProductosNovedad");
@@ -118,40 +116,40 @@ for (let i = 0; i < productosNovedad.length; i += 4) {
     let grupo = productosNovedad.slice(i, i + 4);
     let cards = "";
 
-
-    grupo.forEach((producto) => {
+    for (let j = 0; j < grupo.length; j++) {
+        let producto = grupo[j];
 
         cards += `
 
-            <div class="card card-catalogo">
+            <div class="card tarjeta-producto tarjeta-novedad rejilla-novedad">
 
                 <img
                     src="${producto.imagen}"
-                    class="card-img-top imagen-novedad"
+                    class="card-img-top imagen-novedad manito imagen-completa"
                     alt="${producto.nombre}"
                     onclick="verDetalle(${producto.id})"
                 >
 
-                <div class="card-body">
+                <div class="card-body contenido-novedad rejilla-novedad">
 
-                    <h6 class="marca-novedad">
+                    <h6 class="marca-novedad elemento-novedad">
                         ${producto.marca}
                     </h6>
 
-                    <h5 class="card-title">
+                    <h5 class="card-title elemento-novedad">
                         ${producto.nombre}
                     </h5>
 
-                    <p class="modelo-novedad">
+                    <p class="modelo-novedad elemento-novedad">
                         ${producto.modelo}
                     </p>
 
-                    <p class="precio-novedad">
+                    <p class="precio-novedad elemento-novedad">
                         $${producto.precio.toLocaleString("es-CL")}
                     </p>
 
                     <button
-                        class="btn btn-dark"
+                        class="btn btn-dark boton-novedad elemento-novedad"
                         onclick="verDetalle(${producto.id})"
                     >
                         Ver producto
@@ -163,14 +161,17 @@ for (let i = 0; i < productosNovedad.length; i += 4) {
 
         `;
 
-    });
+    }
 
-
+    let activo = "";
+    if (i === 0) {
+        activo = "active";
+    }
     listaNovedad.innerHTML += `
 
-        <div class="carousel-item ${i === 0 ? "active" : ""}">
+        <div class="carousel-item ${activo}">
 
-            <div class="grupo-cards">
+            <div class="grupo-tarjetas">
 
                 ${cards}
 
@@ -182,20 +183,5 @@ for (let i = 0; i < productosNovedad.length; i += 4) {
 
 }
 
-
-function verDetalle(id){
-
-    let productoSeleccionado;
-
-    for (let i = 0; i < productosNovedad.length; i++){
-
-        if(productosNovedad[i].id === id){
-            productoSeleccionado = productosNovedad[i];
-        }
-    }
-
-    localStorage.setItem("producto",JSON.stringify(productoSeleccionado));
-    window.location.href = "detalle.html";
-}
-
-
+function verDetalle(id) { 
+    window.location.href = "detalle.html?id=" + id; }
