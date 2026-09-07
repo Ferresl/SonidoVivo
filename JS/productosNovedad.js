@@ -75,34 +75,55 @@ let productosNovedad =[
         imagenB: "Images/CatalogoImages/BT001-back.png",
         imagenD: "Images/CatalogoImages/BT001-detail.png"
     },
+    {
+        id: 34,
+        codigo: "PE004",
+        categoria: "Pedales de Efectos",
+        nombre: "Pedal Afinador Cromático",
+        marca: "Boss",
+        modelo: "TU-3",
+        stock: 8,
+        precio: 89990,
+        descripcion: "Afinador cromático en formato pedal con indicador visual para realizar ajustes rápidos y precisos durante ensayos o presentaciones.",
+        imagen: "Images/CatalogoImages/PE004-front.png",
+        imagenS: "Images/CatalogoImages/PE004-side.png",
+        imagenB: "Images/CatalogoImages/PE004-back.png",
+        imagenD: "Images/CatalogoImages/PE004-detail.png"
+    },
+    {
+        id: 30,
+        codigo: "MI004",
+        categoria: "Micrófonos",
+        nombre: "Micrófono USB de Condensador",
+        marca: "Blue",
+        modelo: "Yeti",
+        stock: 5,
+        precio: 299990,
+        descripcion: "Micrófono USB de condensador con cuatro patrones polares, versátil para streaming, podcast, locución y creación de contenido.",
+        imagen: "Images/CatalogoImages/MI004-front.png",
+        imagenS: "Images/CatalogoImages/MI004-side.png",
+        imagenB: "Images/CatalogoImages/MI004-back.png",
+        imagenD: "Images/CatalogoImages/MI004-detail.png"
+    },
 
 
 ];
 
 
-let indicadores =
-    document.getElementById("indicadoresNovedad");
-
-
-
 let listaNovedad =
     document.getElementById("listaProductosNovedad");
 
-
 for (let i = 0; i < productosNovedad.length; i += 4) {
 
-    let productosGrupo =
-        productosNovedad.slice(i, i + 4);
-
-
+    let grupo = productosNovedad.slice(i, i + 4);
     let cards = "";
 
 
-    productosGrupo.forEach((producto) => {
+    grupo.forEach((producto) => {
 
         cards += `
 
-            <div class="card card-novedad">
+            <div class="card card-catalogo">
 
                 <img
                     src="${producto.imagen}"
@@ -173,11 +194,7 @@ function verDetalle(id){
         }
     }
 
-    localStorage.setItem(
-        "producto",
-        JSON.stringify(productoSeleccionado)
-    );
-
+    localStorage.setItem("producto",JSON.stringify(productoSeleccionado));
     window.location.href = "detalle.html";
 }
 
