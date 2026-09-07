@@ -1,0 +1,63 @@
+main {
+    background-color: rgb(240, 240, 240);
+    min-height: 80vh;
+    padding: 60px 20px;
+}
+
+.bienvenida-admin {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.accesos-admin {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.tarjeta-admin {
+    background-color: white;
+    width: 280px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    text-decoration: none;
+    color: black;
+}
+
+.tarjeta-admin:hover {
+    box-shadow: 0 0 15px #999;
+}
+
+.footer-admin {
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.tabla-admin {
+    background-color: white;
+    margin-top: 20px;
+}
+
+.form-editar {
+    background-color: white;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.form-editar label {
+    display: block;
+    margin-top: 12px;
+}
+
+.form-editar input {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+}

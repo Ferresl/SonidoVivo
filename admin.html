@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/admin.css">
+
+    <title>SonidoVivo - Panel Administrador</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="admin.html">SonidoVivo Admin</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="mantenedorContenido.html">Mantenedor de Contenido</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="mantenedorUsuarios.html">Mantenedor de Usuarios</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="Inicio.html">Volver al sitio público</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Cerrar Sesión</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="bienvenida-admin">
+            <h1>Bienvenido, Administrador</h1>
+            <p>Desde este panel puedes gestionar el catálogo de productos y los usuarios registrados en SonidoVivo.</p>
+        </div>
+
+        <div class="accesos-admin">
+
+            <a href="mantenedorContenido.html" class="tarjeta-admin">
+                <h3>Mantenedor de Contenido</h3>
+                <p>Revisa y edita los productos publicados en la tienda.</p>
+            </a>
+
+            <a href="mantenedorUsuarios.html" class="tarjeta-admin">
+                <h3>Mantenedor de Usuarios</h3>
+                <p>Crea, edita y administra los usuarios del sistema.</p>
+            </a>
+
+        </div>
+
+    </main>
+
+    <footer class="footer-admin">
+        <p>SonidoVivo &copy; 2026 - Panel Administrativo</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/admin.css">
+
+    <title>SonidoVivo - Mantenedor de Usuarios</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="admin.html">SonidoVivo Admin</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="mantenedorContenido.html">Mantenedor de Contenido</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="mantenedorUsuarios.html">Mantenedor de Usuarios</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="Inicio.html">Volver al sitio público</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Cerrar Sesión</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <h1>Mantenedor de Usuarios</h1>
+
+        <button class="btn btn-dark mb-3" onclick="mostrarFormularioNuevoUsuario()">Agregar Usuario</button>
+
+        <table class="table table-striped tabla-admin">
+            <thead>
+                <tr>
+                    <th>RUN</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Correo</th>
+                    <th>Tipo Usuario</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTablaUsuarios">
+            </tbody>
+        </table>
+
+        <div id="formularioNuevoUsuario" class="form-editar" style="display: none;">
+
+            <h2>Nuevo Usuario</h2>
+
+            <label for="nuevoRun">RUN:</label>
+            <input type="text" id="nuevoRun">
+
+            <label for="nuevoNombreUsuario">Nombre:</label>
+            <input type="text" id="nuevoNombreUsuario">
+
+            <label for="nuevoApellidos">Apellidos:</label>
+            <input type="text" id="nuevoApellidos">
+
+            <label for="nuevoCorreoUsuario">Correo:</label>
+            <input type="email" id="nuevoCorreoUsuario">
+
+            <label for="nuevoTipoUsuario">Tipo de Usuario:</label>
+            <select id="nuevoTipoUsuario">
+                <option value="Cliente">Cliente</option>
+                <option value="Administrador">Administrador</option>
+            </select>
+
+            <label for="nuevoRegion">Región:</label>
+            <select id="nuevoRegion" onchange="actualizarComunas('nuevoRegion', 'nuevoComuna')">
+            </select>
+
+            <label for="nuevoComuna">Comuna:</label>
+            <select id="nuevoComuna">
+            </select>
+
+            <label for="nuevoDireccion">Dirección:</label>
+            <input type="text" id="nuevoDireccion">
+
+            <button class="btn btn-dark mt-2" onclick="guardarNuevoUsuario()">Guardar Usuario</button>
+            <button class="btn btn-secondary mt-2" onclick="cerrarFormularioNuevoUsuario()">Cancelar</button>
+
+        </div>
+
+        <div id="formularioEditarUsuario" class="form-editar" style="display: none;">
+
+            <h2>Editar Usuario</h2>
+
+            <label for="editRun">RUN:</label>
+            <input type="text" id="editRun">
+
+            <label for="editNombreUsuario">Nombre:</label>
+            <input type="text" id="editNombreUsuario">
+
+            <label for="editApellidos">Apellidos:</label>
+            <input type="text" id="editApellidos">
+
+            <label for="editCorreoUsuario">Correo:</label>
+            <input type="email" id="editCorreoUsuario">
+
+            <label for="editTipoUsuario">Tipo de Usuario:</label>
+            <select id="editTipoUsuario">
+                <option value="Cliente">Cliente</option>
+                <option value="Administrador">Administrador</option>
+            </select>
+
+            <label for="editRegion">Región:</label>
+            <select id="editRegion" onchange="actualizarComunas('editRegion', 'editComuna')">
+            </select>
+
+            <label for="editComuna">Comuna:</label>
+            <select id="editComuna">
+            </select>
+
+            <label for="editDireccion">Dirección:</label>
+            <input type="text" id="editDireccion">
+
+            <button class="btn btn-dark mt-2" onclick="guardarCambiosUsuario()">Guardar Cambios</button>
+            <button class="btn btn-secondary mt-2" onclick="cerrarFormularioUsuario()">Cancelar</button>
+
+        </div>
+
+    </main>
+
+    <footer class="footer-admin">
+        <p>SonidoVivo &copy; 2026 - Panel Administrativo</p>
+    </footer>
+
+    <script src="JS/mantenedorUsuarios.js"></script>
+</body>
+</html>

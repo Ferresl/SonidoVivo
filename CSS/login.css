@@ -1,0 +1,40 @@
+.login {
+    width: 300px;
+    margin: 100px auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.login h1 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.login label {
+    display: block;
+    margin-top: 15px;
+}
+
+.login input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.campo-clave {
+    position: relative;
+}
+
+.campo-clave input {
+    padding-right: 35px;
+}
+
+#ojito {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    cursor: pointer;
+    user-select: none;
+}
