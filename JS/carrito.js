@@ -108,6 +108,9 @@ function actualizarCarrito() {
         lista.innerHTML = contenido;
         document.getElementById("totalCarrito").textContent = moneda(precioTotal);
         document.getElementById("vaciarCarrito").disabled = carrito.length === 0;
+        document.getElementById("mostrarPago").disabled = carrito.length === 0;
+        document.getElementById("formularioPago").hidden = true;
+        document.getElementById("resultadoPago").hidden = true;
     }
 }
 
@@ -122,5 +125,41 @@ for (let i = 0; i < enlaces.length; i++) {
 let botonVaciar = document.getElementById("vaciarCarrito");
 if (botonVaciar !== null) {
     botonVaciar.onclick = vaciarCarrito;
+}
+
+let botonPago = document.getElementById("mostrarPago");
+if (botonPago !== null) {
+    let formulario = document.getElementById("formularioPago");
+    let resultado = document.getElementById("resultadoPago");
+
+    botonPago.onclick = function () {
+        formulario.hidden = false;
+        resultado.hidden = true;
+        document.getElementById("metodoPago").focus();
+    };
+
+    document.getElementById("cancelarPago").onclick = function () {
+        formulario.hidden = true;
+        botonPago.focus();
+    };
+
+    formulario.onsubmit = function (evento) {
+        evento.preventDefault();
+        if (carrito.length === 0 || !formulario.reportValidity()) return;
+
+        for (let i = 0; i < carrito.length; i++) {
+            if (!Number.isInteger(carrito[i].cantidad) || carrito[i].cantidad <= 0) {
+                resultado.textContent = "Revisa las cantidades antes de pagar. Deben ser números enteros mayores a cero.";
+                resultado.hidden = false;
+                return;
+            }
+        }
+
+        let seguimiento = Math.floor(1000000000 + Math.random() * 9000000000);
+        resultado.innerHTML = 'Tu compra va en camino. Contáctate con <a href="https://www.chilexpress.cl/" target="_blank" rel="noopener noreferrer">Chilexpress</a> para más detalles.<br>Número de seguimiento (demostración): ' + seguimiento;
+        resultado.hidden = false;
+        formulario.hidden = true;
+        formulario.reset();
+    };
 }
 actualizarCarrito();
