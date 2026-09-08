@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="CSS/contacto.css">
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/funcionalidad.css">
+    <link rel="stylesheet" href="CSS/imagen.css">
+    <link rel="stylesheet" href="CSS/inicio.css">
+    <link rel="stylesheet" href="CSS/contacto.css">
+    <title>Contacto - Sonido Vivo</title>
+    <script src="JS/sesion.js"></script>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav w-100 enlaces-menu">
+                    <li class="nav-item"><a class="nav-link" href="Inicio.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Inicio.html#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item acceso-sesion"><a class="nav-link" href="login.html">Inicia Sesion</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="fondo-pagina">
+    <section class="seccion-pagina seccion-blanca contacto-principal">
+
+        <h1 class="titulo-seccion">Contacto</h1>
+
+        <p class="texto-contacto">
+            Si tienes alguna duda o consulta, completa el siguiente formulario.
+        </p>
+
+        <form id="formContacto" class="formulario-contacto">
+
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" class="form-control" maxlength="100">
+
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" class="form-control" maxlength="100">
+
+            <label for="comentario">Comentario</label>
+            <textarea id="comentario" class="form-control" rows="5" maxlength="500"></textarea>
+
+            <button type="submit" class="btn btn-primary boton-contacto">Enviar</button>
+
+        </form>
+    </section>
+</main>
+
+<footer class="footer-contacto">
+
+    <p class="titulo-footer">
+        Síguenos en nuestras redes sociales
+    </p>
+
+    <div class="redes-footer">
+
+        <a href="https://www.instagram.com/sonido_.vivo/"
+           target="_blank"
+           class="instagram">
+            <i class="bi bi-instagram"></i>
+        </a>
+
+        <a href="https://wa.me/56900000000"
+           target="_blank"
+           class="whatsapp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+
+        <a href="https://www.facebook.com/profile.php?id=100057384885975"
+           target="_blank"
+           class="facebook">
+            <i class="bi bi-facebook"></i>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <p class="texto-footer">Sonido Vivo</p>
+
+</footer>
+
+<script src="JS/contacto.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
